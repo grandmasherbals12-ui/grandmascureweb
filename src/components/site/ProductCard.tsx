@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
       <Link to="/shop/$productId" params={{ productId: product.id }}>
         <div className="overflow-hidden">
           <motion.img
-            src={product.image}
+            src={product.images?.[0] ?? product.image}
             alt={product.name}
             className="w-full h-64 object-cover"
             whileHover={{ scale: 1.05 }}

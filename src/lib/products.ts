@@ -11,6 +11,7 @@ export type Product = {
   description: string;
   price: number;
   image: string;
+  images?: string[];
   badge?: string;
   ingredients: string[];
   rating: number;
@@ -24,6 +25,7 @@ export const categories = [
   "Relaxation & Calm Support",
   "Sleep-Supportive Wellness",
   "Wellness Support for Prostate-Conscious Lifestyles",
+  "Wellness Support for Adult Enhancement",
   "Digestive Wellness Support",
   "Energy & Focus Support",
   "Appetite Awareness Support",
@@ -86,6 +88,75 @@ export const products: Product[] = [
     ingredients: ["Jojoba Oil", "Calendula", "Frankincense", "Myrrh"],
     rating: 4.9,
     reviews: 98,
+  },
+  {
+    id: "5",
+    name: "Herbal IV",
+    tagline: "Ultimate wellness support.",
+    category: "Circulation & Recovery Support",
+    description:
+      "Premium herbal infusion blend designed to provide comprehensive wellness support and promote optimal circulation and recovery.",
+    price: 65,
+    image: "/herbal-iv-1.png",
+    images: [
+      "/herbal-iv-1.png",
+      "/herbal-iv-2.png",
+      "/herbal-iv-3.png",
+      "/herbal-iv-4.png",
+    ],
+    ingredients: ["Elderberry", "Ginger", "Turmeric", "Ginseng", "Organic Cane Alcohol"],
+    rating: 4.8,
+    reviews: 127,
+  },
+  {
+    id: "6",
+    name: "Not Today",
+    tagline: "Unwavering mental clarity.",
+    category: "Energy & Focus Support",
+    description:
+      "A powerful focus and mood support blend crafted to keep you grounded and mentally sharp when you need it most.",
+    price: 42,
+    image: "/not-today-1.png",
+    images: [
+      "/not-today-1.png",
+      "/not-today-2.png",
+      "/not-today-3.png",
+      "/not-today-4.png",
+      "/not-today-5.png",
+      "/not-today-6.png",
+      "/not-today-7.png",
+      "/not-today-8.png",
+    ],
+    ingredients: ["Rhodiola", "Ashwagandha", "Bacopa", "Gotu Kola"],
+    rating: 4.9,
+    reviews: 156,
+  },
+  {
+    id: "7",
+    name: "Boom Max",
+    tagline: "Unleash your energy.",
+    category: "Wellness Support for Adult Enhancement",
+    description:
+      "A premium blend crafted to support energy, performance, and vitality for adults seeking enhanced wellness experiences.",
+    price: 58,
+    image: tincture,
+    badge: "New",
+    ingredients: ["Tribulus Terrestris", "Maca", "Korean Ginseng", "L-Arginine"],
+    rating: 4.7,
+    reviews: 203,
+  },
+  {
+    id: "8",
+    name: "Peach Flow",
+    tagline: "Natural vitality and circulation.",
+    category: "Wellness Support for Adult Enhancement",
+    description:
+      "A delicious peach-infused blend designed to support circulation, vitality, and overall adult wellness for a naturally enhanced lifestyle.",
+    price: 54,
+    image: tea,
+    ingredients: ["Peach Extract", "Hawthorn", "Ginkgo Biloba", "Ginger"],
+    rating: 4.8,
+    reviews: 178,
   },
 ];
 

@@ -43,6 +43,9 @@ export const Route = createFileRoute("/shop/$productId")({
 function ProductPage() {
   const { productId } = Route.useParams();
   const product = getProduct(productId);
+  const [mainImage, setMainImage] = useState<string>(
+    product.images?.[0] ?? product.image
+  );
   const [qty, setQty] = useState(1);
   const related = products.filter((p) => p.id !== product.id).slice(0, 4);
   const { addToCart } = useCart();
@@ -61,10 +64,26 @@ function ProductPage() {
           {/* Product Image */}
           <div className="rounded-lg overflow-hidden">
             <img
-              src={product.image}
+              src={mainImage}
               alt={product.name}
               className="w-full h-full object-cover"
             />
+
+            {product.images && product.images.length > 1 && (
+              <div className="mt-3 flex gap-2 overflow-x-auto px-1">
+                {product.images.map((img) => (
+                  <button
+                    key={img}
+                    onClick={() => setMainImage(img)}
+                    className={`h-20 w-20 flex-shrink-0 rounded-md overflow-hidden border-2 ${
+                      mainImage === img ? "border-olive-600" : "border-transparent"
+                    }`}
+                  >
+                    <img src={img} alt={product.name} className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Product Details */}
